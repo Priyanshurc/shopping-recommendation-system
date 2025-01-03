@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+.next/
+.env
+
+# npm
+package-lock.json
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
