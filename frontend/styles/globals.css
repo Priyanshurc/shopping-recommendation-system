@@ -19,3 +19,22 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Add this to your global CSS file or in a component-specific CSS */
+.slider-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: lightgray;
+}
+
+.slick-prev, .slick-next {
+  z-index: 1;
+}
