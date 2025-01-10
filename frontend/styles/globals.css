@@ -32,7 +32,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 200px;
-  background: lightgray;
+  background: rgb(0, 0, 0);
 }
 
 .slick-prev, .slick-next {

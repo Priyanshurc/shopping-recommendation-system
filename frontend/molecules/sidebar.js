@@ -1,16 +1,28 @@
-// Sidebar.js
 import React, { useState } from "react";
 import "styles/sidebar.css";
 
 const Sidebar = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);  // Track if sidebar is expanded
+
+  // Function to toggle the sidebar's expanded/collapsed state
+  const toggleSidebar = () => {
+    setIsExpanded((prevState) => !prevState);  // Toggle sidebar state
+  };
 
   return (
     <div
-      className={`sidebar ${isHovered ? "expanded" : "collapsed"}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`sidebar ${isExpanded ? "expanded" : "collapsed"}`}
+      onMouseEnter={() => setIsExpanded(true)}  // Expand on hover
+      onMouseLeave={() => setIsExpanded(false)} // Collapse on mouse leave
     >
+      {/* Hamburger icon, only visible when collapsed */}
+      {!isExpanded && (
+        <div className="sidebar-icon" onClick={toggleSidebar}>
+          &#9776; {/* Hamburger icon */}
+        </div>
+      )}
+
+      {/* Sidebar content */}
       <h2>Menu</h2>
       <ul>
         <li><a href="/dashboard">Dashboard</a></li>

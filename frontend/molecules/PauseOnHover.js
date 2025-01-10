@@ -1,7 +1,16 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+// Use public folder paths
+const images = [
+  "/images/1.jpg",
+  "/images/2.jpg",
+  "/images/3.jpg",
+  "/images/6.jpg",
+  "/images/7.jpg",
+];
 
 const PauseOnHover = () => {
   const settings = {
@@ -15,26 +24,30 @@ const PauseOnHover = () => {
   };
 
   return (
-    <div style={{ width: "80%", margin: "0 auto", paddingTop: "50px" }}>
+    <div style={{ width: "100%", margin: "0 auto", paddingTop: "50px" }}>
       <Slider {...settings}>
-        <div style={{ backgroundColor: "green", color: "white", height: "200px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <h3>Slide 1</h3>
-        </div>
-        <div style={{ backgroundColor: "green", color: "white", height: "200px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <h3>Slide 2</h3>
-        </div>
-        <div style={{ backgroundColor: "green", color: "white", height: "200px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <h3>Slide 3</h3>
-        </div>
-        <div style={{ backgroundColor: "green", color: "white", height: "200px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <h3>Slide 4</h3>
-        </div>
-        <div style={{ backgroundColor: "green", color: "white", height: "200px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <h3>Slide 5</h3>
-        </div>
-        <div style={{ backgroundColor: "green", color: "white", height: "200px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <h3>Slide 6</h3>
-        </div>
+        {images.map((src, index) => (
+          <div
+            key={index}
+            style={{
+              height: "400px", // Increase height
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={src}
+              alt={`Slide ${index + 1}`}
+              style={{
+                maxWidth: "90%", // Adjust to fit larger size
+                maxHeight: "100%",
+                objectFit: "cover",
+                borderRadius: "12px", // Optional: make corners rounder
+              }}
+            />
+          </div>
+        ))}
       </Slider>
     </div>
   );
