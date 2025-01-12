@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "@molecules/sidebar";
 import PauseOnHover from "@molecules/PauseOnHover";
-import SearchBox from "@molecules/Searchbox";  // Import the SearchBox component
+import SearchBox from "@molecules/SearchBox";  
 import "styles/app.css";
 
 const App = () => {
@@ -12,7 +12,8 @@ const App = () => {
         <PauseOnHover />
       </div>
 
-      <SearchBox /> {/* Add SearchBox component */}
+      <SearchBox
+      /> {/* Add SearchBox component */}
 
       <Sidebar />
       <div className="content" style={{ marginLeft: "250px", padding: "20px" }}>
